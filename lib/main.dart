@@ -101,6 +101,7 @@ class _SumOfNumbersState extends State<SumOfNumbers> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.pink,
         body: _questionIndex < _questions.length

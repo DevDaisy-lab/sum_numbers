@@ -14,7 +14,7 @@ class Question extends StatelessWidget {
           child: Image.asset(
             'assets/images/pic1.jpg',
             width: double.infinity,
-            height: 230,
+            height: 237,
             fit: BoxFit.cover,
           ),
         ),
