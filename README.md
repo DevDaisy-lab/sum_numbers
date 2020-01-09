@@ -5,6 +5,10 @@ This application sums numbers, the number on the button is equal to this score. 
 
 Please find the application widget tree:
 
+
+
+![](https://github.com/Laura555-p/sum_numbers/blob/master/assets/images/sum_numberswidgettree.png)
+
 Application is created of a map, two methods and if statement.
 Map is a collection of questions and possible scores.
 One method sums selected scores, another one resets the quiz.
