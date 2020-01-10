@@ -1,4 +1,4 @@
-**The Sum Numbers mobile application**
+**The Sum Of Numbers mobile application**
 
 
 This application sums numbers, the number on the button is equal to this score. The goal is 298, so the user needs to select numbers that help to reach the goal by summing them. 
