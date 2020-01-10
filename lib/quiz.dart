@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
 import 'package:sum_numbers/answer.dart';
-import 'package:sum_numbers/question.dart';
+import 'package:sum_numbers/task.dart';
 
 class Quiz extends StatelessWidget {
-  final List<Map<String, Object>> questions;
-  final int questionIndex;
-  final Function answerQuestion;
+  final List<Map<String, Object>> tasks;
+  final int taskIndex;
+  final Function answerOfTask;
 
   Quiz(
-      {@required this.questions,
-      @required this.questionIndex,
-      @required this.answerQuestion});
+      {@required this.tasks,
+      @required this.taskIndex,
+      @required this.answerOfTask});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class Quiz extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Expanded(child: Question(questions[questionIndex]['questionText'])),
+          Expanded(child: Task(tasks[taskIndex]['taskText'])),
           Expanded(
             child: Container(
               child: GridView.count(
@@ -29,13 +29,13 @@ class Quiz extends StatelessWidget {
                 crossAxisSpacing: 1.0,
                 childAspectRatio: 2,
                 children: [
-                  ...(questions[questionIndex]['answers']
+                  ...(tasks[taskIndex]['answers']
                           as List<Map<String, Object>>)
                       .map((answer) {
                     return FittedBox(
                       child: SizedBox(
                         height: 40,
-                        child: Answer(() => answerQuestion(answer['score']),
+                        child: Answer(() => answerOfTask(answer['score']),
                             answer['text']),
                       ),
                     );

@@ -11,9 +11,9 @@ class SumOfNumbers extends StatefulWidget {
 }
 
 class _SumOfNumbersState extends State<SumOfNumbers> {
-  final _questions = const [
+  final _tasks = const [
     {
-      'questionText': 'Your Goal is 298, please select first number!',
+      'taskText': 'Your Goal is 298, please select first number!',
       'answers': [
         {'text': '10', 'score': 10},
         {'text': '13', 'score': 13},
@@ -24,7 +24,7 @@ class _SumOfNumbersState extends State<SumOfNumbers> {
       ]
     },
     {
-      'questionText': 'Your Goal is 298, please select second number!',
+      'taskText': 'Your Goal is 298, please select second number!',
       'answers': [
         {'text': '42', 'score': 42},
         {'text': '44', 'score': 44},
@@ -35,7 +35,7 @@ class _SumOfNumbersState extends State<SumOfNumbers> {
       ]
     },
     {
-      'questionText': 'Your Goal is 298, please select third number!',
+      'taskText': 'Your Goal is 298, please select third number!',
       'answers': [
         {'text': '142', 'score': 142},
         {'text': '128', 'score': 128},
@@ -46,7 +46,7 @@ class _SumOfNumbersState extends State<SumOfNumbers> {
       ]
     },
     {
-      'questionText': 'Your Goal is 298, please select fourth number!',
+      'taskText': 'Your Goal is 298, please select fourth number!',
       'answers': [
         {'text': '36', 'score': 36},
         {'text': '66', 'score': 66},
@@ -57,7 +57,7 @@ class _SumOfNumbersState extends State<SumOfNumbers> {
       ]
     },
     {
-      'questionText': 'Your Goal is 298, please select fifth number!',
+      'taskText': 'Your Goal is 298, please select fifth number!',
       'answers': [
         {'text': '33', 'score': 33},
         {'text': '23', 'score': 23},
@@ -68,7 +68,7 @@ class _SumOfNumbersState extends State<SumOfNumbers> {
       ]
     },
     {
-      'questionText': 'Your Goal is 298, please select sixth number!',
+      'taskText': 'Your Goal is 298, please select sixth number!',
       'answers': [
         {'text': '70', 'score': 70},
         {'text': '40', 'score': 40},
@@ -80,22 +80,22 @@ class _SumOfNumbersState extends State<SumOfNumbers> {
     },
   ];
 
-  var _questionIndex = 0;
+  var _taskIndex = 0;
   var _totalScore = 0;
 
   void _resetQuiz() {
     setState(() {
-      _questionIndex = 0;
+      _taskIndex = 0;
       _totalScore = 0;
     });
   }
 
-  void _answerQuestion(int score) {
+  void _answerOfTask(int score) {
     _totalScore += score;
     setState(() {
-      _questionIndex = _questionIndex + 1;
+      _taskIndex = _taskIndex + 1;
     });
-    print(_questionIndex);
+    print(_taskIndex);
   }
 
   @override
@@ -104,11 +104,11 @@ class _SumOfNumbersState extends State<SumOfNumbers> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.pink,
-        body: _questionIndex < _questions.length
+        body: _taskIndex < _tasks.length
             ? Quiz(
-                answerQuestion: _answerQuestion,
-                questionIndex: _questionIndex,
-                questions: _questions)
+            answerOfTask: _answerOfTask,
+            taskIndex: _taskIndex,
+            tasks: _tasks)
             : Result(_totalScore, _resetQuiz),
       ),
     );
