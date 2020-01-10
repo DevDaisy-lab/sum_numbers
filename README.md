@@ -12,8 +12,8 @@ Application is created of **a widget tree**, **a map**, **two methods** and **'i
 
 ![](https://github.com/Laura555-p/sum_numbers/blob/master/assets/images/sum_numberswidgettree.png)
 
-- Map **'_questions'** is a collection of task and possible scores.
-- Method **'_answerQuestion'**  sums selected scores.
+- Map **'_tasks'** is a collection of task and possible scores.
+- Method **'_answerOfTask'**  sums selected scores.
 - Method **'_resetQuiz'** resets the quiz.
 - **'If' statement** checks if summed scores are equal to the goal. 
 
